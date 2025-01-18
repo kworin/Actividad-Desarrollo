@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hatsune Miku Company</title>
+  <link rel="stylesheet" href="styles.css" /> <!-- Conectamos el CSS -->
+</head>
+<body>
+
+  <!--Video de bienvenida-->
+  <div id="video-container">
+    <video autoplay muted playsinline id="background-video">
+      <source src="assets/fondo3.mp4" type="video/mp4" />
+      <!-- Video de fondo, si no se ve, checa la ruta -->
+    </video>
+    <div id="overlay-content">
+      <button onclick="skipVideo()">Entrar</button> <!-- Botón para entrar -->
+    </div>
+  </div>
+
+  <!-- Menú lateral con redes sociales -->
+  <div class="side-nav" id="side-nav" style="display: none;"> <!-- Oculto al inicio -->
+    <nav class="menu">
+      <ul>
+        <li><a href="#about">Conciertos</a></li>
+        <li><a href="#gallery">Álbums</a></li>
+        <li><a href="#special">Mercancía</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="social">
+      <ul>
+        <li>
+          <a href="https://x.com/mikuexpo" target="_blank" rel="noopener noreferrer">
+            <img src="assets/logoX.jpg.png" alt="Logo de X" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/HatsuneMikuOfficialPage/" target="_blank" rel="noopener noreferrer">
+            <img src="assets/logofacebook.png" alt="Logo de Facebook" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/miku_expo/?ref=badge" target="_blank" rel="noopener noreferrer">
+            <img src="assets/logoinstagram.png" alt="Logo de Instagram" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div id="main-content" style="display: none;"> <!-- Se oculta hasta que le den "Entrar" -->
+
+    <!-- Encabezado -->
+    <header>
+      <div class="header-content">
+        <div class="header-text">
+          <h1>Hatsune Miku Compañía</h1>
+          <p>Empresa dedicada a la promoción, desarrollo y eventos relacionados con Hatsune Miku.</p>
+          <h2>Sección Destacada</h2>
+        </div>
+        <img src="assets/mikumiku.png" alt="Imagen de Miku" class="header-img" />
+      </div>
+    </header>
+
+    <!-- Sección de Conciertos -->
+    <section id="about">
+      <div class="proyecto">
+        <h3>Conciertos Virtuales</h3>
+        <p>Organización de conciertos en vivo con tecnología holográfica para traer a Miku al escenario.</p>
+        <img src="assets/concierto.png" alt="Imagen de un concierto de Hatsune Miku" />
+      </div>
+    </section>
+
+    <!-- Sección de Álbums -->
+    <section id="gallery">
+      <div class="proyecto">
+        <h3>Nuevos Álbumes</h3>
+        <p>Producción y lanzamiento de álbumes musicales con nuevas canciones de Hatsune Miku.</p>
+        <img src="assets/albums.jpg" alt="Portada de un álbum de Hatsune Miku" />
+      </div>
+    </section>
+
+    <!--  Sección de Mercancía -->
+    <section id="special">
+      <div class="proyecto">
+        <h3>Mercancía Hatsune Miku</h3>
+        <p>Mercancía oficial de Hatsune Miku.</p>
+        <img src="assets/merch.jpg" alt="Fotos de Mercancía" />
+      </div>
+    </section>
+
+    <!-- Formulario de Contacto-->
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <form class="contact-form">
+        <label for="nombre">Nombre</label>
+        <input 
+          type="text" 
+          id="nombre" 
+          name="nombre" 
+          placeholder="Ingresa tu nombre" 
+          required 
+        />
+
+        <label for="correo">Correo Electrónico</label>
+        <input 
+          type="email" 
+          id="correo" 
+          name="correo" 
+          placeholder="Ingresa tu correo electrónico" 
+          required 
+        />
+
+        <label for="mensaje">Mensaje</label>
+        <textarea 
+          id="mensaje" 
+          name="mensaje" 
+          placeholder="Escribe tu mensaje" 
+          rows="5" 
+          required
+        ></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Hatsune Miku Compañía. Todos los derechos reservados ante mi perro Max.</p>
+    </footer>
+  </div>
+
+  <!-- Script para cambiar de video a página -->
+  <script>
+    function skipVideo() {
+      document.getElementById('video-container').style.display = 'none'; // Esconde el video
+      document.getElementById('side-nav').style.display = 'flex'; // Muestra el menú lateral
+      document.getElementById('main-content').style.display = 'block'; // Muestra la página
+    }
+  </script>
+
+</body>
+</html>
